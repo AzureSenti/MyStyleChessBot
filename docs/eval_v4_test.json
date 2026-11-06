@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "dataset": "data/datasets/style_v4",
+    "split": "test",
+    "checkpoints": [
+      "/home/azure/.cache/huggingface/hub/models--UofTCSSLab--Maia3-79M/snapshots/a107d6ceb7b298cb04ae1da4edffe2939858b894/maia3-79m.pt",
+      "finetunes/maia3-79m-v4/best.pt",
+      "finetunes/maia3-79m-v4-final/best.pt"
+    ],
+    "labels": [
+      "raw79m",
+      "v4",
+      "v4-final"
+    ],
+    "batch_size": 512,
+    "workers": 4,
+    "model": "maia3-79m",
+    "device": "cuda",
+    "elo_override": null,
+    "bootstrap_iter": 2000,
+    "json": "docs/eval_v4_test.json"
+  },
+  "results": {
+    "raw79m": {
+      "checkpoint": "/home/azure/.cache/huggingface/hub/models--UofTCSSLab--Maia3-79M/snapshots/a107d6ceb7b298cb04ae1da4edffe2939858b894/maia3-79m.pt",
+      "nll_mean": 1.3065309087934391,
+      "top1": 0.5582317662990908,
+      "top3": 0.8457148384600502,
+      "top5": 0.9299671116270072,
+      "ece": 0.03768874493240734,
+      "phase_top1": {
+        "opening": 53.65944734876774,
+        "middlegame": 55.473579262213356,
+        "endgame": 58.67674858223062
+      },
+      "game_nll_mean": 1.3245614601030773
+    },
+    "v4": {
+      "checkpoint": "finetunes/maia3-79m-v4/best.pt",
+      "nll_mean": 1.1754511597992745,
+      "top1": 0.604178757980267,
+      "top3": 0.8701876571870768,
+      "top5": 0.9416715031921068,
+      "ece": 0.01806086579704912,
+      "phase_top1": {
+        "opening": 63.74159820761762,
+        "middlegame": 57.98604187437687,
+        "endgame": 61.66351606805293
+      },
+      "game_nll_mean": 1.182093841308053
+    },
+    "v4-final": {
+      "checkpoint": "finetunes/maia3-79m-v4-final/best.pt",
+      "nll_mean": 1.1630911808884399,
+      "top1": 0.6053395240858966,
+      "top3": 0.8748307216095956,
+      "top5": 0.9437028438769588,
+      "ece": 0.02218597314128979,
+      "phase_top1": {
+        "opening": 63.59223300970874,
+        "middlegame": 58.1655034895314,
+        "endgame": 61.928166351606805
+      },
+      "game_nll_mean": 1.1672294760994109
+    }
+  },
+  "bootstrap": {
+    "raw79m vs v4": {
+      "d_nll": 0.14246761879502415,
+      "d_nll_ci": [
+        0.12616692610085095,
+        0.1575900490723164
+      ],
+      "d_top1_pct": -5.059524859903908,
+      "d_top1_ci_pct": [
+        -5.969854163252988,
+        -4.153841362208259
+      ]
+    },
+    "raw79m vs v4-final": {
+      "d_nll": 0.15733198400366655,
+      "d_nll_ci": [
+        0.13960939427717728,
+        0.17399647363642917
+      ],
+      "d_top1_pct": -5.113159617869509,
+      "d_top1_ci_pct": [
+        -5.996887594395416,
+        -4.156415148342483
+      ]
+    }
+  }
+}

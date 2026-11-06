@@ -1,0 +1,288 @@
+[
+  {
+    "game": 1,
+    "res_bot": "W",
+    "color": "W",
+    "opponent": "LunaBaka",
+    "plies": 109,
+    "acc": 100.0,
+    "avg_cpl": 33.7,
+    "blunders_open": 0,
+    "blunders": 7,
+    "open": {
+      "avg_cpl": 15.8,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 49.7,
+      "n": 20,
+      "acc": 100.0
+    },
+    "end": {
+      "avg_cpl": 28.0,
+      "n": 25,
+      "acc": 99.9
+    },
+    "worst": {
+      "ply": 35,
+      "cpl": 192,
+      "uci": "d3f5"
+    },
+    "book_plies": 1,
+    "deviated_at_ply": 2,
+    "termination": "Normal"
+  },
+  {
+    "game": 2,
+    "res_bot": "W",
+    "color": "B",
+    "opponent": "LunaBaka",
+    "plies": 30,
+    "acc": 100.0,
+    "avg_cpl": 12.7,
+    "blunders_open": 0,
+    "blunders": 1,
+    "open": {
+      "avg_cpl": 8.0,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 22.2,
+      "n": 5,
+      "acc": 100.0
+    },
+    "end": null,
+    "worst": {
+      "ply": 26,
+      "cpl": 110,
+      "uci": "d7g4"
+    },
+    "book_plies": 2,
+    "deviated_at_ply": 3,
+    "termination": "Normal"
+  },
+  {
+    "game": 3,
+    "res_bot": "W",
+    "color": "W",
+    "opponent": "LunaBaka",
+    "plies": 73,
+    "acc": 100.0,
+    "avg_cpl": 50.2,
+    "blunders_open": 2,
+    "blunders": 7,
+    "open": {
+      "avg_cpl": 48.5,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 30.4,
+      "n": 20,
+      "acc": 100.0
+    },
+    "end": {
+      "avg_cpl": 109.3,
+      "n": 7,
+      "acc": 100.0
+    },
+    "worst": {
+      "ply": 35,
+      "cpl": 255,
+      "uci": "d4e5"
+    },
+    "book_plies": 1,
+    "deviated_at_ply": 2,
+    "termination": "Normal"
+  },
+  {
+    "game": 4,
+    "res_bot": "W",
+    "color": "B",
+    "opponent": "LunaBaka",
+    "plies": 42,
+    "acc": 100.0,
+    "avg_cpl": 20.5,
+    "blunders_open": 0,
+    "blunders": 0,
+    "open": {
+      "avg_cpl": 13.0,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 27.3,
+      "n": 11,
+      "acc": 100.0
+    },
+    "end": null,
+    "worst": {
+      "ply": 38,
+      "cpl": 97,
+      "uci": "h5f3"
+    },
+    "book_plies": 2,
+    "deviated_at_ply": 3,
+    "termination": "Normal"
+  },
+  {
+    "game": 5,
+    "res_bot": "L",
+    "color": "B",
+    "opponent": "LunaBaka",
+    "plies": 43,
+    "acc": 100.1,
+    "avg_cpl": 134.9,
+    "blunders_open": 0,
+    "blunders": 4,
+    "open": {
+      "avg_cpl": 22.2,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 237.4,
+      "n": 11,
+      "acc": 100.3
+    },
+    "end": null,
+    "worst": {
+      "ply": 40,
+      "cpl": 1000,
+      "uci": "f8e8"
+    },
+    "book_plies": 8,
+    "deviated_at_ply": 9,
+    "termination": "Normal"
+  },
+  {
+    "game": 6,
+    "res_bot": "W",
+    "color": "W",
+    "opponent": "LunaBaka",
+    "plies": 29,
+    "acc": 100.0,
+    "avg_cpl": 30.6,
+    "blunders_open": 1,
+    "blunders": 1,
+    "open": {
+      "avg_cpl": 38.2,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 15.4,
+      "n": 5,
+      "acc": 100.0
+    },
+    "end": null,
+    "worst": {
+      "ply": 11,
+      "cpl": 105,
+      "uci": "f1d3"
+    },
+    "book_plies": 1,
+    "deviated_at_ply": 2,
+    "termination": "Normal"
+  },
+  {
+    "game": 7,
+    "res_bot": "W",
+    "color": "B",
+    "opponent": "LunaBaka",
+    "plies": 66,
+    "acc": 100.0,
+    "avg_cpl": 43.5,
+    "blunders_open": 1,
+    "blunders": 4,
+    "open": {
+      "avg_cpl": 68.2,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 25.9,
+      "n": 20,
+      "acc": 100.0
+    },
+    "end": {
+      "avg_cpl": 78.0,
+      "n": 3,
+      "acc": 100.0
+    },
+    "worst": {
+      "ply": 10,
+      "cpl": 350,
+      "uci": "c6b5"
+    },
+    "book_plies": 10,
+    "deviated_at_ply": 11,
+    "termination": "Normal"
+  },
+  {
+    "game": 8,
+    "res_bot": "W",
+    "color": "W",
+    "opponent": "LunaBaka",
+    "plies": 21,
+    "acc": 100.0,
+    "avg_cpl": 17.8,
+    "blunders_open": 0,
+    "blunders": 0,
+    "open": {
+      "avg_cpl": 18.0,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 16.0,
+      "n": 1,
+      "acc": 100.0
+    },
+    "end": null,
+    "worst": {
+      "ply": 7,
+      "cpl": 90,
+      "uci": "f1c4"
+    },
+    "book_plies": 7,
+    "deviated_at_ply": 8,
+    "termination": "Normal"
+  },
+  {
+    "game": 9,
+    "res_bot": "W",
+    "color": "B",
+    "opponent": "LunaBaka",
+    "plies": 114,
+    "acc": 100.0,
+    "avg_cpl": 39.5,
+    "blunders_open": 0,
+    "blunders": 7,
+    "open": {
+      "avg_cpl": 21.4,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 61.6,
+      "n": 20,
+      "acc": 100.0
+    },
+    "end": {
+      "avg_cpl": 29.8,
+      "n": 27,
+      "acc": 100.0
+    },
+    "worst": {
+      "ply": 86,
+      "cpl": 388,
+      "uci": "h3h2"
+    },
+    "book_plies": 11,
+    "deviated_at_ply": 12,
+    "termination": "Normal"
+  }
+]

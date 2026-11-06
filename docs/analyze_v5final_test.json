@@ -1,0 +1,134 @@
+[
+  {
+    "game": 1,
+    "res_bot": "L",
+    "color": "W",
+    "opponent": "LunaBaka",
+    "plies": 70,
+    "acc": 100.1,
+    "avg_cpl": 68.7,
+    "blunders_open": 1,
+    "blunders": 7,
+    "open": {
+      "avg_cpl": 23.0,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 52.9,
+      "n": 20,
+      "acc": 100.0
+    },
+    "end": {
+      "avg_cpl": 223.2,
+      "n": 5,
+      "acc": 100.5
+    },
+    "worst": {
+      "ply": 67,
+      "cpl": 1000,
+      "uci": "g1h1"
+    },
+    "book_plies": 1,
+    "deviated_at_ply": 2,
+    "termination": "Normal"
+  },
+  {
+    "game": 2,
+    "res_bot": "W",
+    "color": "B",
+    "opponent": "LunaBaka",
+    "plies": 74,
+    "acc": 100.0,
+    "avg_cpl": 27.2,
+    "blunders_open": 0,
+    "blunders": 4,
+    "open": {
+      "avg_cpl": 4.9,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 30.1,
+      "n": 20,
+      "acc": 100.0
+    },
+    "end": {
+      "avg_cpl": 50.9,
+      "n": 7,
+      "acc": 100.0
+    },
+    "worst": {
+      "ply": 52,
+      "cpl": 130,
+      "uci": "c8d8"
+    },
+    "book_plies": 10,
+    "deviated_at_ply": 11,
+    "termination": "Normal"
+  },
+  {
+    "game": 3,
+    "res_bot": "L",
+    "color": "B",
+    "opponent": "LunaBaka",
+    "plies": 129,
+    "acc": 100.0,
+    "avg_cpl": 74.7,
+    "blunders_open": 0,
+    "blunders": 15,
+    "open": {
+      "avg_cpl": 5.5,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 109.5,
+      "n": 20,
+      "acc": 100.0
+    },
+    "end": {
+      "avg_cpl": 74.6,
+      "n": 34,
+      "acc": 100.1
+    },
+    "worst": {
+      "ply": 128,
+      "cpl": 1000,
+      "uci": "d5d6"
+    },
+    "book_plies": 0,
+    "deviated_at_ply": 1,
+    "termination": "Normal"
+  },
+  {
+    "game": 4,
+    "res_bot": "W",
+    "color": "W",
+    "opponent": "LunaBaka",
+    "plies": 21,
+    "acc": 100.0,
+    "avg_cpl": 29.1,
+    "blunders_open": 0,
+    "blunders": 1,
+    "open": {
+      "avg_cpl": 13.5,
+      "n": 10,
+      "acc": 100.0
+    },
+    "mid": {
+      "avg_cpl": 185.0,
+      "n": 1,
+      "acc": 100.0
+    },
+    "end": null,
+    "worst": {
+      "ply": 21,
+      "cpl": 185,
+      "uci": "d5c7"
+    },
+    "book_plies": 1,
+    "deviated_at_ply": 2,
+    "termination": "Normal"
+  }
+]

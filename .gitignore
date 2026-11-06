@@ -167,3 +167,18 @@ data/*
 data/evals/*
 !data/evals/2022-test-annotated.jsonl
 !assets/scale_acc_1d.png
+
+# ── Workflow cục bộ của dự án (bot + train) ─────────────────────────
+# venv riêng cho lichess-bot
+.venv-bot/
+# bản clone lichess-bot package
+.lichess-bot/
+# stockfish binary 100MB+
+.tools/
+# chứa Lichess token — KHÔNG commit
+code/config.yml
+# log bot
+docs/logs/
+logs_engine_errors.txt
+opencode/
+.opencode/

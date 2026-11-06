@@ -1,0 +1,169 @@
+[
+  {
+    "account": "TsukinoLuna",
+    "games": 2596,
+    "score": "1265T 144H 1187B",
+    "score_pct": 51.5,
+    "by_color": {
+      "W": {
+        "n": 1306,
+        "fmt": "654T 69H 583B",
+        "score_pct": 52.7
+      },
+      "B": {
+        "n": 1290,
+        "fmt": "611T 75H 604B",
+        "score_pct": 50.3
+      }
+    },
+    "by_tc": {
+      "rapid": {
+        "n": 2137,
+        "fmt": "1043T 123H 971B",
+        "score_pct": 51.7
+      },
+      "blitz": {
+        "n": 459,
+        "fmt": "222T 21H 216B",
+        "score_pct": 50.7
+      }
+    },
+    "phase": {
+      "khai": {
+        "n_moves": 25835,
+        "avg_cpl": 41.5,
+        "median_cpl": 10,
+        "blunder_rate_duoi30s": 9.9,
+        "blunder_rate_30-90s": 38.3,
+        "blunder_rate_tren90s": 50.0
+      },
+      "trung": {
+        "n_moves": 40644,
+        "avg_cpl": 100.8,
+        "median_cpl": 34,
+        "blunder_rate_duoi30s": 28.0,
+        "blunder_rate_30-90s": 43.4,
+        "blunder_rate_tren90s": 53.3
+      },
+      "tan": {
+        "n_moves": 23420,
+        "avg_cpl": 91.0,
+        "median_cpl": 16,
+        "blunder_rate_duoi30s": 22.7,
+        "blunder_rate_30-90s": 42.3,
+        "blunder_rate_tren90s": 0.0
+      }
+    },
+    "castling": {
+      "pct_games_castled": 86.2,
+      "median_ply": 15
+    },
+    "aggression": {
+      "captures_per_100_moves": 24.6,
+      "checks_per_100_moves": 8.7
+    },
+    "time_control": {
+      "median_movetime_khai": 2,
+      "median_movetime_trung": 6,
+      "median_movetime_tan": 3,
+      "lost_on_time": 85,
+      "resigned_losses": 591
+    },
+    "missed_mate_games": 610,
+    "missed_mate_total": 1452,
+    "first_mistake_median_ply": 19,
+    "instant_moves": {
+      "n_moves_under_2s": 27189,
+      "avg_cpl_under_2s": 47.6
+    },
+    "recommendations": [
+      "cpl TÀN cao hơn khai ~219% → luyện endgame cơ bản (đường vua, qua trận, quảng se chốt) đóng ~15 phút trình này mỗi buổi",
+      "blunder tàn khi giờ cạn (<30s) là 22.7% gần 2.5× lúc giờ ĐẺ — luyện tàn nhanh: 10-15 ván endgame 1+2'.",
+      "85 ván hoà giờ — dài hơi luôn đặt 'checkpoint giờ' mỗi 10 nước lui/đi.",
+      "bo Sollt 1452 lần 'có mate nhưng bỏ' — раз ch CON: 10 phút mating-patterns mỗi discontinuity tối.",
+      "lớp phong cách: sự cố đầu tiên thường ở ply 19 — chủ động chấm qu ước vị thế, tái kế hoach khi tới gần đấy."
+    ]
+  },
+  {
+    "account": "Sasayaku",
+    "games": 366,
+    "score": "180T 17H 169B",
+    "score_pct": 51.5,
+    "by_color": {
+      "W": {
+        "n": 181,
+        "fmt": "89T 7H 85B",
+        "score_pct": 51.1
+      },
+      "B": {
+        "n": 185,
+        "fmt": "91T 10H 84B",
+        "score_pct": 51.9
+      }
+    },
+    "by_tc": {
+      "rapid": {
+        "n": 341,
+        "fmt": "169T 17H 155B",
+        "score_pct": 52.1
+      },
+      "blitz": {
+        "n": 25,
+        "fmt": "11T 0H 14B",
+        "score_pct": 44.0
+      }
+    },
+    "phase": {
+      "khai": {
+        "n_moves": 3651,
+        "avg_cpl": 37.9,
+        "median_cpl": 9,
+        "blunder_rate_duoi30s": 9.3,
+        "blunder_rate_30-90s": 33.3
+      },
+      "trung": {
+        "n_moves": 5924,
+        "avg_cpl": 101.7,
+        "median_cpl": 32,
+        "blunder_rate_duoi30s": 28.4,
+        "blunder_rate_30-90s": 38.2,
+        "blunder_rate_tren90s": 50.0
+      },
+      "tan": {
+        "n_moves": 3499,
+        "avg_cpl": 96.5,
+        "median_cpl": 16,
+        "blunder_rate_duoi30s": 23.6,
+        "blunder_rate_30-90s": 46.3
+      }
+    },
+    "castling": {
+      "pct_games_castled": 86.3,
+      "median_ply": 16
+    },
+    "aggression": {
+      "captures_per_100_moves": 24.9,
+      "checks_per_100_moves": 10.3
+    },
+    "time_control": {
+      "median_movetime_khai": 2,
+      "median_movetime_trung": 6,
+      "median_movetime_tan": 3,
+      "lost_on_time": 8,
+      "resigned_losses": 75
+    },
+    "missed_mate_games": 102,
+    "missed_mate_total": 270,
+    "first_mistake_median_ply": 20,
+    "instant_moves": {
+      "n_moves_under_2s": 4016,
+      "avg_cpl_under_2s": 50.8
+    },
+    "recommendations": [
+      "cpl TÀN cao hơn khai ~255% → luyện endgame cơ bản (đường vua, qua trận, quảng se chốt) đóng ~15 phút trình này mỗi buổi",
+      "8 ván hoà giờ — dài hơi luôn đặt 'checkpoint giờ' mỗi 10 nước lui/đi.",
+      "bo Sollt 270 lần 'có mate nhưng bỏ' — раз ch CON: 10 phút mating-patterns mỗi discontinuity tối.",
+      "lớp phong cách: sự cố đầu tiên thường ở ply 20 — chủ động chấm qu ước vị thế, tái kế hoach khi tới gần đấy."
+    ]
+  }
+]

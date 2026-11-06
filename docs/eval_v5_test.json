@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "dataset": "data/datasets/style_v5",
+    "split": "test",
+    "checkpoints": [
+      "finetunes/maia3-79m/best.pt",
+      "finetunes/maia3-79m-v5-final/best.pt",
+      "finetunes/maia3-79m-v5/best.pt"
+    ],
+    "labels": null,
+    "batch_size": 512,
+    "workers": 4,
+    "model": "maia3-79m",
+    "device": "cuda",
+    "elo_override": null,
+    "bootstrap_iter": 2000,
+    "json": "docs/eval_v5_test.json"
+  },
+  "results": {
+    "maia3-79m": {
+      "checkpoint": "finetunes/maia3-79m/best.pt",
+      "nll_mean": 1.1702885943509476,
+      "top1": 0.5956963940489199,
+      "top3": 0.8684542321593679,
+      "top5": 0.9404891989577204,
+      "ece": 0.01812970261143125,
+      "phase_top1": {
+        "opening": 61.69154228855721,
+        "middlegame": 58.206223306894444,
+        "endgame": 61.013590033975085
+      },
+      "game_nll_mean": 1.192558625457496
+    },
+    "maia3-79m-v5-final": {
+      "checkpoint": "finetunes/maia3-79m-v5-final/best.pt",
+      "nll_mean": 1.2128307834372294,
+      "top1": 0.5952761200302598,
+      "top3": 0.8640833823653021,
+      "top5": 0.936958897200975,
+      "ece": 0.05139613808869736,
+      "phase_top1": {
+        "opening": 62.46545052515202,
+        "middlegame": 58.16046369737645,
+        "endgame": 60.56058890147226
+      },
+      "game_nll_mean": 1.2288511990263236
+    },
+    "maia3-79m-v5": {
+      "checkpoint": "finetunes/maia3-79m-v5/best.pt",
+      "nll_mean": 1.1949279038835403,
+      "top1": 0.5955282844414558,
+      "top3": 0.8639152727578381,
+      "top5": 0.9364545683785829,
+      "ece": 0.011414643322894432,
+      "phase_top1": {
+        "opening": 62.299613045881706,
+        "middlegame": 58.068944478340455,
+        "endgame": 60.900339750849376
+      },
+      "game_nll_mean": 1.213710574534035
+    }
+  },
+  "bootstrap": {
+    "maia3-79m vs maia3-79m-v5-final": {
+      "d_nll": -0.036292573568827605,
+      "d_nll_ci": [
+        -0.046870568715475756,
+        -0.026274742751872554
+      ],
+      "d_top1_pct": -0.09682844362255046,
+      "d_top1_ci_pct": [
+        -0.745544947076026,
+        0.5829252638117501
+      ]
+    },
+    "maia3-79m vs maia3-79m-v5": {
+      "d_nll": -0.021151949076539354,
+      "d_nll_ci": [
+        -0.027351577271803894,
+        -0.014853419151228857
+      ],
+      "d_top1_pct": -0.05924637917206012,
+      "d_top1_ci_pct": [
+        -0.5810292822676332,
+        0.43595467099332275
+      ]
+    }
+  }
+}

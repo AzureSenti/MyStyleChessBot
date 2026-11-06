@@ -12,6 +12,8 @@ Advanced users can still pass architectural flags directly for custom checkpoint
 """
 
 import argparse
+import json
+import random
 import sys
 from collections import deque
 
@@ -71,6 +73,11 @@ def parse_args(argv=None):
     parser.add_argument("--elo", type=int, default=1500, help="Default Elo for both self and opponent (override via UCI 'setoption name SelfElo/OppoElo')")
     parser.add_argument("--temperature", type=float, default=1.0, help="Sampling temperature on the move policy. 0 = argmax")
     parser.add_argument("--top-p", "--top_p", dest="top_p", type=float, default=1.0, help="Nucleus sampling threshold (1.0 = disabled)")
+    parser.add_argument("--opening-book", "--opening_book", dest="opening_book", type=str, default=None,
+                        help="JSON opening-book path: dict prefix-uci-string -> {next-move: count}. Bot plays "
+                             "book moves (weighted by count) for plies < --book-depth instead of the model.")
+    parser.add_argument("--book-depth", "--book_depth", dest="book_depth", type=int, default=12,
+                        help="Max ply depth to answer from the opening book (0 = startpos only)")
     parser.add_argument("--multipv", "--multi-pv", dest="multipv",
                         type=int, default=5,
                         help="Number of candidate moves to emit as standard UCI MultiPV info lines")
@@ -229,6 +236,8 @@ class Maia3UCIEngine:
         self.temperature = cfg.temperature
         self.top_p = cfg.top_p
         self.multipv = clamp_multipv(cfg.multipv)
+        self.book = None            # lazily loaded from cfg.opening_book
+        self.book_depth = cfg.book_depth
 
         self.board = chess.Board()
         self.history = deque(maxlen=cfg.history)
@@ -367,6 +376,16 @@ class Maia3UCIEngine:
         print(f"option name Temperature type string default {self.cfg.temperature}")
         print(f"option name TopP type string default {self.cfg.top_p}")
         print(f"option name MultiPV type spin default {self.multipv} min 1 max 20")
+        print(f"option name OpeningBook type string default {self.cfg.opening_book or 'none'}")
+        print(f"option name BookDepth type spin default {self.book_depth} min 0 max 40")
+        # Standard UCI options so third-party UCI tools (lichess-bot + python-chess)
+        # can configure us without raising "unsupported option" errors.
+        print("option name Ponder type check default false")
+        print("option name Threads type spin default 1 min 1 max 1024")
+        print("option name Hash type spin default 16 min 1 max 4096")
+        print("option name Move Overhead type spin default 10 min 0 max 5000")
+        print("option name UCI_Opponent type string default none")
+        print("option name UCI_ShowWDL type check default true")
         print("uciok", flush=True)
 
     def cmd_setoption(self, line):
@@ -393,6 +412,14 @@ class Maia3UCIEngine:
                 self.top_p = float(value)
             elif name == "multipv":
                 self.multipv = clamp_multipv(value)
+            elif name == "openingbook":
+                self.cfg.opening_book = value
+                self.book = None    # reload on next move
+            elif name == "bookdepth":
+                self.book_depth = int(value)
+            elif name in ("ponder", "threads", "hash", "move overhead",
+                          "uci_opponent", "uci_showwdl"):
+                pass  # accepted for UCI-tool compatibility; engine is stateless here
         except ValueError:
             return
 
@@ -461,7 +488,56 @@ class Maia3UCIEngine:
             self.board = board
             self._reset_history()
 
+    def _load_book(self):
+        if self.book is not None or not self.cfg.opening_book:
+            return
+        try:
+            with open(self.cfg.opening_book, encoding="utf-8") as f:
+                self.book = json.load(f)
+            print(f"opening book loaded: {len(self.book)} nodes "
+                  f"({self.cfg.opening_book}, depth {self.book_depth})", file=sys.stderr, flush=True)
+        except Exception as e:  # noqa: BLE001
+            print(f"opening book load FAILED: {e} — playing model moves everywhere",
+                  file=sys.stderr, flush=True)
+            self.book = {}
+
+    def sel_book_move(self):
+        """Opening-book move for the current position (weighted by play count, §khai).
+
+        Book keys are the uci prefix actually played so far (space-separated);
+        values map next-move-uci -> count in the user's corpus.
+        Returns None (→ fall back to the model) beyond book depth or off book.
+        """
+        self._load_book()
+        if not self.book or len(self.board.move_stack) >= max(1, self.book_depth):
+            return None
+        prefix = " ".join(mv.uci() for mv in self.board.move_stack)
+        node = self.book.get(prefix)
+        if not node:
+            return None
+        legal_legals = {}
+        for mv_name, w in node.items():
+            try:
+                m = chess.Move.from_uci(mv_name)
+            except ValueError:
+                continue
+            if m in self.board.legal_moves:
+                legal_legals[mv_name] = max(1, int(w))
+        if not legal_legals:
+            return None
+        moves = list(legal_legals.keys())
+        weights = [legal_legals[k] for k in moves]
+        choice = random.choices(moves, weights=weights, k=1)[0]
+        move = chess.Move.from_uci(choice)
+        print(f"info depth 0 book ply {len(self.board.move_stack) + 1} "
+              f"nodes {len(self.book)} pv {move.uci()}", flush=True)
+        return move
+
     def cmd_go(self, line):
+        book_move = self.sel_book_move()
+        if book_move is not None:
+            self.print_bestmove(book_move)
+            return
         self.ensure_model_loaded()
         move, top_moves = self.score_moves()
         for rank, item in enumerate(top_moves, start=1):

@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "dataset": "data/datasets/style_v5",
+    "split": "test",
+    "checkpoints": [
+      "finetunes/maia3-79m-v4-final/best.pt",
+      "finetunes/maia3-79m-v5-final/best.pt",
+      "finetunes/maia3-79m-v5/best.pt",
+      "finetunes/maia3-79m-v3/best.pt"
+    ],
+    "labels": null,
+    "batch_size": 512,
+    "workers": 4,
+    "model": "maia3-79m",
+    "device": "cuda",
+    "elo_override": null,
+    "bootstrap_iter": 2000,
+    "json": "docs/eval_v5_test_crossmodels.json"
+  },
+  "results": {
+    "maia3-79m-v4-final": {
+      "checkpoint": "finetunes/maia3-79m-v4-final/best.pt",
+      "nll_mean": 1.1547837575558764,
+      "top1": 0.6048583676557115,
+      "top3": 0.8716483147011852,
+      "top5": 0.9411616373875767,
+      "ece": 0.018225187245833753,
+      "phase_top1": {
+        "opening": 61.69154228855721,
+        "middlegame": 59.09090909090909,
+        "endgame": 62.45753114382786
+      },
+      "game_nll_mean": 1.175342751045344
+    },
+    "maia3-79m-v5-final": {
+      "checkpoint": "finetunes/maia3-79m-v5-final/best.pt",
+      "nll_mean": 1.2128307834372294,
+      "top1": 0.5952761200302598,
+      "top3": 0.8640833823653021,
+      "top5": 0.936958897200975,
+      "ece": 0.05139613808869736,
+      "phase_top1": {
+        "opening": 62.46545052515202,
+        "middlegame": 58.16046369737645,
+        "endgame": 60.56058890147226
+      },
+      "game_nll_mean": 1.2288511990263236
+    },
+    "maia3-79m-v5": {
+      "checkpoint": "finetunes/maia3-79m-v5/best.pt",
+      "nll_mean": 1.1949279038835403,
+      "top1": 0.5955282844414558,
+      "top3": 0.8639152727578381,
+      "top5": 0.9364545683785829,
+      "ece": 0.011414643322894432,
+      "phase_top1": {
+        "opening": 62.299613045881706,
+        "middlegame": 58.068944478340455,
+        "endgame": 60.900339750849376
+      },
+      "game_nll_mean": 1.213710574534035
+    },
+    "maia3-79m-v3": {
+      "checkpoint": "finetunes/maia3-79m-v3/best.pt",
+      "nll_mean": 1.1145991228111682,
+      "top1": 0.6184752458603009,
+      "top3": 0.8825754391863495,
+      "top5": 0.9472135832562831,
+      "ece": 0.01140159080311504,
+      "phase_top1": {
+        "opening": 63.46047540077391,
+        "middlegame": 60.173886516168395,
+        "endgame": 64.12797281993205
+      },
+      "game_nll_mean": 1.1485868766973653
+    }
+  },
+  "bootstrap": {
+    "maia3-79m-v4-final vs maia3-79m-v5-final": {
+      "d_nll": -0.05350844798097946,
+      "d_nll_ci": [
+        -0.06267427893422388,
+        -0.04483722617018582
+      ],
+      "d_top1_pct": 0.6224596513572066,
+      "d_top1_ci_pct": [
+        0.0712997225833762,
+        1.1714205449566777
+      ]
+    },
+    "maia3-79m-v4-final vs maia3-79m-v5": {
+      "d_nll": -0.0383678234886912,
+      "d_nll_ci": [
+        -0.046771106580634006,
+        -0.03029825731624479
+      ],
+      "d_top1_pct": 0.6600417158076968,
+      "d_top1_ci_pct": [
+        0.17989753219991986,
+        1.0992883233784847
+      ]
+    },
+    "maia3-79m-v4-final vs maia3-79m-v3": {
+      "d_nll": 0.02675587434797916,
+      "d_nll_ci": [
+        0.014979151619730964,
+        0.039207954399123744
+      ],
+      "d_top1_pct": -1.2847166075113534,
+      "d_top1_ci_pct": [
+        -1.9273078173000853,
+        -0.642436700428056
+      ]
+    }
+  }
+}
